@@ -1434,9 +1434,9 @@ final class BlockchainProcessorImpl implements BlockchainProcessor {
             }
             BlockImpl genesisBlock = new BlockImpl(-1, 0, 0, Constants.MAX_BALANCE_NQT, 0, transactions.size() * 128, digest.digest(),
                     privateChainGetCreatorPublicKey(), new byte[64], null, null, transactions);
-            //update by xblock start
+            //update by liulei start
             genesisBlock.setBlockSignature(privateChainGetGenesisBlockSignature(genesisBlock));
-            //update by xblock end 
+            //update by liulei end 
             genesisBlock.setPrevious(null);
             addBlock(genesisBlock);
             return true;
