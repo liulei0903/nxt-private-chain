@@ -129,7 +129,7 @@ public final class Constants {
     public static final int MAX_TAGGED_DATA_DATA_LENGTH = 42 * 1024;
 
     public static final int ALIAS_SYSTEM_BLOCK = 22000;
-    //update by xblock 
+    //update by liulei 
     public static final int TRANSPARENT_FORGING_BLOCK = 0;
     //public static final int TRANSPARENT_FORGING_BLOCK = 30000;
     public static final int ARBITRARY_MESSAGES_BLOCK = 40000;
@@ -146,7 +146,7 @@ public final class Constants {
     public static final int REFERENCED_TRANSACTION_FULL_HASH_BLOCK = isTestnet ? NQT_BLOCK : 140000;
     public static final int REFERENCED_TRANSACTION_FULL_HASH_BLOCK_TIMESTAMP = isTestnet ? 13031352 : 15134204;
     public static final int MAX_REFERENCED_TRANSACTION_TIMESPAN = 60 * 1440 * 60;
-    //update by xblock 
+    //update by liulei 
     //public static final int DIGITAL_GOODS_STORE_BLOCK = isTestnet ? 77341 : 213000;
     public static final int DIGITAL_GOODS_STORE_BLOCK = isTestnet ? 77341 : 0;
     public static final int MONETARY_SYSTEM_BLOCK = isTestnet ? 150000 : 330000;
@@ -166,7 +166,7 @@ public final class Constants {
 
     public static final int LAST_CHECKSUM_BLOCK = CHECKSUM_BLOCK_24;
     // LAST_KNOWN_BLOCK must also be set in html/www/js/nrs.constants.js
-    //update by xblock 
+    //update by liulei 
     //public static final int LAST_KNOWN_BLOCK = CHECKSUM_BLOCK_24;
     public static final int LAST_KNOWN_BLOCK = 0;
 

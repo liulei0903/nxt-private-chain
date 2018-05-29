@@ -1,85 +1,22 @@
-----
-# Welcome to Nxt! #
+背景和目标：
+本人是JAVA工程师，对区块链技术非常有兴趣，看过《精通比特币》等书籍，所以对比特币底层原理是点了解的，但没有到代码级别，比特币使用的C++语言又看不懂，
+后来找到有个JAVA语言编写的数字货币NXT未来币(https://github.com/Blackcomb/nxt)，二话不说把代码下载部署起来，看看P2P网络，共识算法，挖矿，交易
+的广播，区块的广播到底是怎么实现的。
+但问题来了，NXT可以运行起来，但默认连接的外网公有链，发起交易就需要去交易所购买NXT币，这样怎么方便测试Debug呢？
+当然不行，我就想着把它改成私有链，因为我之前使用过
+以太坊的私有链Geth客户端，只用改下创世区块genesis.json文件即可。但NXT使用私有链没这么简单，看NXT白皮书也没找到改成私有链的方法，后面凭着对区块链的基础知识
+(基础很关键)+NXT白皮书成功改成了私有链
 
-----
-## What is Nxt? ##
-Nxt is a modern economic system based on cryptography and blockchain technology.
+行动：
+为了让NXT部署私有链，主要修改点：
+1.nxt-default.properties文件的nxt.defaultPeers参数，该参数指定了P2P网络的对等节点IP地址，可以是局域网
+2.修改创世区块信息，由于NXT的发布模式与比特币不同，比特币是不断减慢的速率逐步发出，NXT是IPO发行模式，将所有的币一次性释出， 而且只分给73个人（NXT团队开发人员或利益相关方）,
+分币的逻辑写到java代码中，如果我要一个有币的账户测试，必须在创世区块的分币逻辑中分给我创建的账户。所以我把分币给73个账户的逻辑改成了分两个我自己控制的账户。
+3.NXT为了停止向下兼容，在一些逻辑处理中判断区块链的高度小于某个数就不做处理，由于我们私有链高度是0开始，导致很多逻辑执行不了，所以我把涉及高度判断的地方，把高度降低到0
+总结：修改的地方并不多，可以用 "update by liulei"关键字去搜索，我把修改的地方都加了这个注释
 
-With Nxt, you can manage and interact with
-
- - your **assets**
- - your **businesses**
- - your **customers**
-
-in such a way that no trusted third parties are required anymore.
-
-----
-## Get it! ##
-
-  - *pre-packaged* - `https://www.jelurida.com/`
-
-  - *dependencies*:
-    - *general* - Java 8
-    - *Ubuntu* - `http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html`
-    - *Debian* - `http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html`
-    - *FreeBSD* - `pkg install openjdk8`
-
-  - *repository* - `git clone https://bitbucket.org/Jelurida/nxt.git`
-  
-----
-## Run it! ##
-
-  - click on the Nxt icon, or start from the command line:
-  - Unix: `./start.sh`
-  - Mac: `./run.command`
-  - Window: `run.bat`
-
-  - wait for the JavaFX wallet window to open
-  - on platforms without JavaFX, open http://localhost:7876/ in a browser
-
-----
-## Compile it! ##
-
-  - if necessary with: `./compile.sh`
-  - you need jdk-8 as well
-
-----
-## Improve it! ##
-
-  - we love **pull requests**
-  - we love issues (resolved ones actually ;-) )
-  - in any case, make sure you leave **your ideas** at BitBucket
-  - assist others on the issue tracker
-  - **review** existing code and pull requests
-  - cf. coding guidelines in DEVELOPERS-GUIDE.md
-
-----
-## Troubleshooting the NRS (Nxt Reference Software) ##
-
-  - How to Stop the NRS Server?
-    - click on Nxt Stop icon, or run `./stop.sh`
-    - or if started from command line, ctrl+c or close the console window
-
-  - UI Errors or Stacktraces?
-    - report on BitBucket
-
-  - Permissions Denied?
-    - no spaces and only latin characters in the path to the NRS installation directory
-    - known jetty issue
-
-----
-## Further Reading ##
-
-  - in this repository:
-    - USERS-GUIDE.md
-    - DEVELOPERS-GUIDE.md
-    - OPERATORS-GUIDE.md
-
-  - in the wiki:
-    - nxtwiki.org
-
-  - on the forums:
-    - nxtforum.org
-    
-----
-
+结果：
+由于NXT使用IPO发行方式，在以太坊推出智能合约后，NXT在市场上没有了技术亮点，也就慢慢没人关注了，但这不影响我们学习它的技术，看看NXT的POS共识算法，P2P传播网络，交易的广播，区块的打包、广播等，还是很有收获的
+为此我也写了一份学习笔记(NXT未来币区块链学习笔记.docx)，里面标记的NXT与比特币的差异、关键功能的简易流程图及JAVA入口类，方便有兴趣的同学学习。
+ps：学习过程中我们要带着问题去思考，学区块链之前我领导问我“大家一直诟病比特币，以太坊的TPS太低，那到底是什么决定了区块链平台的TPS?如何提升TPS呢？”
+关于这个问题我在 NXT未来币区块链学习笔记.docx 中有自己的解答，可能有不对的地方，欢迎感兴趣的同学一起讨论，谢谢。
