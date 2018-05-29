@@ -22,3 +22,14 @@ NXT未来币私有链版本
 为此我也写了一份学习笔记[NXT未来币区块链学习笔记.docx](https://github.com/liulei0903/nxt-private-chain/blob/master/private-chain-nxt-master/docs/NXT%E6%9C%AA%E6%9D%A5%E5%B8%81%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.docx)，里面标记的NXT与比特币的差异、关键功能的简易流程图及JAVA入口类，方便有兴趣的同学学习。  
 ps：学习过程中我们要带着问题去思考，学区块链之前我领导问我“大家一直诟病比特币，以太坊的TPS太低，那到底是什么决定了区块链平台的TPS?如何提升TPS呢？”  
 关于这个问题我在 [NXT未来币区块链学习笔记.docx](https://github.com/liulei0903/nxt-private-chain/blob/master/private-chain-nxt-master/docs/NXT%E6%9C%AA%E6%9D%A5%E5%B8%81%E5%8C%BA%E5%9D%97%E9%93%BE%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.docx) 中有自己的解答，可能有不对的地方，欢迎感兴趣的同学一起讨论，谢谢。  
+
+# 创世区块中分配了币的两个账户：  
+用户1：  
+账户地址：NXT-JTQV-3YYD-RLFY-7FB58   
+私钥：end apart laid tough handle spirit tease random fought adore truck stress  
+公钥字符串：e115049da84efb677d48caf10628bbe4e732fe53715c14aaccf70c8499e30d03  
+  
+用户2：  
+账户地址：NXT-7JHU-CNU9-PXZC-7ZF4D  
+私钥: spell nation scratch satisfy watch closet normal color heat due recall movie  
+公钥字符串：befe07305a13e1ab3c2018266e7dadae7cfd147f76c051e8e588b160d850a218  
